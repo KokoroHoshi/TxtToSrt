@@ -1,0 +1,54 @@
+<div class="container my-5">
+<h2 class="mb-4 text-center">TXT → SRT 文字轉字幕</h2>
+
+<div class="mb-3">
+    <textarea 
+    class="form-control"
+    [(ngModel)]="textInput"
+    placeholder="請貼上要轉換的文字..."
+    rows="8"
+    ></textarea>
+</div>
+
+<div class="or-line text-center my-3">或</div>
+
+<!-- 上傳檔案 -->
+<div class="mb-3">
+    <input type="file" class="form-control" accept=".txt" (change)="onFileSelected($event)"/>
+    
+    <!-- <p *ngIf="selectedFileName">已選擇：{{ selectedFileName }}</p> -->
+    @if (selectedFileName) {
+        <small class="text-muted mt-1 d-block">已選擇：{{ selectedFileName }}</small>
+    }
+</div>
+
+<!-- 轉換按鈕 -->
+ <div class="mb-3 text-center">
+     <button 
+            class="btn btn-primary"
+            (click)="onConvert()" 
+            [disabled]="isLoading || (!textInput && !selectedFile)">
+         {{ isLoading? '轉換中...' : '開始轉換' }}
+     </button>
+ </div>
+
+<!-- 進度條 -->
+@if (isLoading) {
+    <div class="progress mb-3">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+    </div>
+}
+
+<!-- 下載區 -->
+@if (convertedFileUrl) {
+    <div class="result alert alert-success text-center">
+        <p>{{ selectedFileName }} 轉換完成！</p>
+        <a 
+            [href]="convertedFileUrl" 
+            download="converted.srt" 
+            class="btn btn-success download-btn">
+            下載 SRT 檔案
+        </a>
+    </div>
+}
+</div>

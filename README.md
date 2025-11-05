@@ -1,5 +1,7 @@
 # TxtToSrt - Text to SRT Subtitle Converter
 
+ [**English**](./README.md) | [**繁體中文**](./README_zh-TW.md)
+
 A modern web application that converts plain text files into SRT (SubRip) subtitle format. Built with Angular frontend and Python FastAPI backend.
 
 ## ✨ Features
@@ -10,6 +12,17 @@ A modern web application that converts plain text files into SRT (SubRip) subtit
 - **Real-time Processing**: Fast conversion with progress indication
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **Modern UI**: Clean, card-based interface with gradient background
+
+## 📋 Table of Contents
+
+- [Screenshots](#-screenshots)
+- [Tech Stack](#-tech-stack)
+- [Quick Start](#-quick-start)
+- [Usage](#-usage)
+- [Project Structure](#-project-structure)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Support](#️-support)
 
 ## 🖼️ Screenshots
 
@@ -133,6 +146,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or need help, please open an issue on GitHub.
 
----
-
-**Made with ❤️ using Angular and FastAPI**
+[(Back to top)](#table-of-contents)

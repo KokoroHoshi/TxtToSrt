@@ -1,8 +1,12 @@
+<div align="center">
+
 # TxtToSrt - 文字轉 SRT 字幕轉換器
 
  [**English**](./README.md) | [**繁體中文**](./README_zh-TW.md)
 
 一個現代化的網頁應用程式，將純文字檔案轉換為 SRT (SubRip) 字幕格式。前端使用 Angular，後端使用 Python FastAPI 建置。
+
+</div>
 
 ## ✨ 功能特色
 

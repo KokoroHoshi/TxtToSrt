@@ -1,8 +1,12 @@
+<div align="center">
+
 # TxtToSrt - Text to SRT Subtitle Converter
 
  [**English**](./README.md) | [**繁體中文**](./README_zh-TW.md)
 
 A modern web application that converts plain text files into SRT (SubRip) subtitle format. Built with Angular frontend and Python FastAPI backend.
+
+</div>
 
 ## ✨ Features
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   standalone: true,
@@ -17,7 +18,7 @@ export class TxtToSrt {
   convertedFileUrl?: string;
   isLoading = false;
 
-  private apiUrl = 'http://localhost:8000/api/txt-to-srt';
+  private apiUrl = `${environment.apiBaseUrl}/api/txt-to-srt`;
 
   constructor(private http: HttpClient) {}
 

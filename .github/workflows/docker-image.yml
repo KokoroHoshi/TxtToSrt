@@ -32,6 +32,6 @@ jobs:
           tags: ghcr.io/kokorohoshi/txt-to-srt:latest
       - name: Trigger Render deploy via hook
         env:
-          RENDER_DEPLOY_HOOK: ${{ RENDER_DEPLOY_HOOK }}
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
         run: curl -X POST $RENDER_DEPLOY_HOOK
           

@@ -17,7 +17,7 @@ export class TxtToSrt {
   convertedFileUrl?: string;
   isLoading = false;
 
-  private apiUrl = 'http://localhost:8000/txt-to-srt';
+  private apiUrl = 'http://localhost:8000/api/txt-to-srt';
 
   constructor(private http: HttpClient) {}
 

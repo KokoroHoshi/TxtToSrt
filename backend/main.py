@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.responses import PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from io import BytesIO
 
@@ -10,17 +11,19 @@ app = FastAPI(title="TXT to SRT API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4200"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-@app.get("/")
+app.mount("/static", StaticFiles(directory="static/browser", html=True), name="static")
+
+@app.get("/api/test")
 def root():
     return {"msg":"HHW"}
 
-@app.post("/txt-to-srt", response_class=PlainTextResponse)
+@app.post("/api/txt-to-srt", response_class=PlainTextResponse)
 async def convert_txt_to_srt(file: UploadFile = File(None), text: str = Form(None)):
     if file:
         content = await file.read()

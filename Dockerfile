@@ -8,6 +8,7 @@ RUN npm install
 
 # Copy all source files and build for production
 COPY frontend/ ./
+RUN rm -rf dist || true
 RUN npm run build --prod
 
 # --- 2. Build FastAPI ---

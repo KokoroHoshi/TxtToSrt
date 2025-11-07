@@ -33,6 +33,7 @@ RUN uv sync --locked
 COPY backend/ ./backend
 
 # Copy built frontend assets into backend/static
+RUN rm -rf ./backend/static || true
 COPY --from=frontend-build /app/frontend/dist/frontend ./backend/static
 
 WORKDIR /app/backend

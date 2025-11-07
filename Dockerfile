@@ -9,7 +9,7 @@ RUN npm install
 # Copy all source files and build for production
 COPY frontend/ ./
 RUN rm -rf dist || true
-RUN ng build --configuration=production --base-href /static/
+RUN npm run build:prod
 
 # --- 2. Build FastAPI ---
 FROM python:3.13-slim AS backend-build

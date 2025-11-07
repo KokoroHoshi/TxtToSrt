@@ -26,7 +26,7 @@ A modern web application that converts plain text files into SRT (SubRip) subtit
 - [🚀 Quick Start](#-quick-start)
 - [🚀 Deployment & Demo](#-deployment--demo)
 - [🔄 CI/CD](#-cicd)
-- [ Usage](#-usage)
+- [📖 Usage](#-usage)
 - [📁 Project Structure](#-project-structure)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)

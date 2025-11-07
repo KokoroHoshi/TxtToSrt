@@ -2,6 +2,8 @@
 
 # TxtToSrt - Text to SRT Subtitle Converter
 
+[![Demo](./screenshots/desktop-interface.png)](https://txttosrt.onrender.com/static/)
+
  [**English**](./README.md) | [**繁體中文**](./README_zh-TW.md)
 
 A modern web application that converts plain text files into SRT (SubRip) subtitle format. Built with Angular frontend and Python FastAPI backend.
@@ -22,7 +24,9 @@ A modern web application that converts plain text files into SRT (SubRip) subtit
 - [🖼️ Screenshots](#%EF%B8%8F-screenshots)
 - [🛠️ Tech Stack](#%EF%B8%8F-tech-stack)
 - [🚀 Quick Start](#-quick-start)
-- [📖 Usage](#-usage)
+- [🚀 Deployment & Demo](#-deployment--demo)
+- [🔄 CI/CD](#-cicd)
+- [ Usage](#-usage)
 - [📁 Project Structure](#-project-structure)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
@@ -30,17 +34,14 @@ A modern web application that converts plain text files into SRT (SubRip) subtit
 
 ## 🖼️ Screenshots
 
-### Desktop View
-![Desktop Interface](./screenshots/desktop-interface.png)
-
-### Mobile View
-![Mobile Interface](./screenshots/mobile-interface.png)
-
 ### Conversion Process
 ![Conversion Demo](./screenshots/conversion-demo.png)
 
 ### Download Result
 ![Download Result](./screenshots/download-result.png)
+
+### Mobile View
+![Mobile Interface](./screenshots/mobile-interface.png)
 
 ## 🛠️ Tech Stack
 
@@ -113,6 +114,39 @@ This application is containerized and deployed on Render.
 - **Demo URL**: [https://txttosrt.onrender.com/static/](https://txttosrt.onrender.com/static/)
 
 **Note**: Render automatically sleeps after 15 minutes of inactivity, so the first visit may take some time to wake up the application.
+
+## 🔄 CI/CD
+
+This project uses GitHub Actions for continuous integration and deployment (CI/CD), implementing automated build and deployment processes.
+
+### Automated Workflow
+
+When you push code to the `main` branch, the system automatically executes the following steps:
+
+1. **Trigger Condition**: Push to `main` branch
+2. **Build Environment**: Ubuntu Latest
+3. **Permissions**: Read code and write packages permissions
+
+### Build Steps
+
+1. **Code Checkout**: Use `actions/checkout@v4` to check out the latest code
+2. **Login to Container Registry**: Use `docker/login-action@v3` to log in to GitHub Container Registry (ghcr.io)
+3. **Build and Push Image**: Use `docker/build-push-action@v6` to build Docker image and push to `ghcr.io/kokorohoshi/txt-to-srt:latest`
+4. **Trigger Deployment**: Call Render deployment hook via HTTP POST request to automatically redeploy the application
+
+### Related Files
+
+- **Workflow File**: `.github/workflows/docker-image.yml`
+- **Docker Image**: `ghcr.io/kokorohoshi/txt-to-srt:latest`
+- **Deployment Platform**: Render (https://txttosrt.onrender.com)
+
+### Configuration Requirements
+
+To make CI/CD work properly, you need to set the following GitHub Secrets:
+
+- `RENDER_DEPLOY_HOOK`: The deployment hook URL provided by Render, used to trigger redeployment
+
+      (Note) GITHUB_TOKEN is automatically provided for container registry authentication, no need to set it
 
 ## 📖 Usage
 

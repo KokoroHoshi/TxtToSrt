@@ -18,6 +18,8 @@ A modern web application that converts plain text files into SRT (SubRip) subtit
 - **Real-time Processing**: Fast conversion with progress indication
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **Modern UI**: Clean, card-based interface with gradient background
+- **Docker Support**: Containerized deployment with multi-stage builds for optimized images
+- **CI/CD Automation**: Automated build and deployment pipeline using GitHub Actions
 
 ## 📋 Table of Contents
 

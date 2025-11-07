@@ -55,6 +55,7 @@ A modern web application that converts plain text files into SRT (SubRip) subtit
 - **FastAPI** - Modern Python web framework
 - **Uvicorn** - ASGI server
 - **uv** - Fast Python package manager
+- **Docker** - Containerized deployment
 
 ## 🚀 Quick Start
 
@@ -102,6 +103,16 @@ A modern web application that converts plain text files into SRT (SubRip) subtit
    Frontend will run on `http://localhost:4200`
 
 3. **Open your browser** and navigate to `http://localhost:4200`
+
+## 🚀 Deployment & Demo
+
+This application is containerized and deployed on Render.
+
+- **Docker Image**: Hosted on GitHub Container Registry (ghcr.io)
+- **Deployment Platform**: Render
+- **Demo URL**: [https://txttosrt.onrender.com/static/](https://txttosrt.onrender.com/static/)
+
+**Note**: Render automatically sleeps after 15 minutes of inactivity, so the first visit may take some time to wake up the application.
 
 ## 📖 Usage
 
